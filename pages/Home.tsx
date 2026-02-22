@@ -9,7 +9,7 @@ import { useLanguage } from '../App';
 import { projects, LocalizedProject } from '../data/projects';
 
 const Home: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [copied, setCopied] = useState(false);
   const [selectedProject, setSelectedProject] = useState<LocalizedProject | null>(null);
   const email = "vansh.moodhoo@gmail.com";
@@ -86,7 +86,7 @@ const Home: React.FC = () => {
               <div className="p-8 flex-1 flex flex-col">
                 <div className="flex-1">
                   <h3 className="text-lg font-black text-slate-900 dark:text-white group-hover:text-sapphire transition-colors">{project.title}</h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed line-clamp-3">{project.longDescription[t.language]}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed line-clamp-3">{project.longDescription[language]}</p>
                 </div>
                 <div className="mt-6 flex items-center justify-between">
                   <div className="flex flex-wrap gap-2">

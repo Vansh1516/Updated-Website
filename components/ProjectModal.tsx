@@ -10,7 +10,7 @@ interface ProjectModalProps {
 }
 
 const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <AnimatePresence>
@@ -46,7 +46,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                 ))}
               </div>
               <div className="mt-6 prose prose-slate dark:prose-invert max-w-none">
-                {project.longDescription[t.language].split('\n').map((paragraph, index) => (
+                {project.longDescription[language].split('\n').map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
