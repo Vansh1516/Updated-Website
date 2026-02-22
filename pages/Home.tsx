@@ -50,10 +50,7 @@ const Home: React.FC = () => {
             </p>
           </div>
           <div className="flex flex-wrap gap-5 pt-4">
-            <a href="#connect" className="px-10 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl text-[11px] font-black tracking-[0.2em] shadow-2xl hover:translate-y-[-3px] active:translate-y-0 transition-all uppercase">
-              {t.hero.connect}
-            </a>
-            <a href="https://www.linkedin.com/in/vansh-moodhoo-017779256/" target="_blank" className="px-10 py-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 rounded-2xl text-[11px] font-black tracking-[0.2em] hover:bg-slate-50 dark:hover:bg-white/5 transition-all uppercase">
+            <a href="https://www.linkedin.com/in/vansh-moodhoo-017779256/" target="_blank" className="px-10 py-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 rounded-2xl text-[11px] font-black tracking-[0.2em] hover:bg-slate-50 dark:hover:bg-white/5 hover:shadow-lg hover:-translate-y-1 transition-all uppercase">
               LinkedIn
             </a>
           </div>
