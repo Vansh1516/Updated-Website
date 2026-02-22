@@ -27,7 +27,7 @@ const Home: React.FC = () => {
         <div className="relative group shrink-0">
           <div className="absolute -inset-1 bg-gradient-to-tr from-sapphire to-blue-300 rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
           <img 
-            src="avatar.jpg" 
+            src="_DSC8726.jpg" 
             alt="Vansh Moodhoo" 
             className="relative w-64 h-80 md:w-72 md:h-96 rounded-[2.5rem] border-4 border-white dark:border-slate-800 object-cover shadow-2xl transition-all duration-700 hover:scale-[1.01]"
           />
