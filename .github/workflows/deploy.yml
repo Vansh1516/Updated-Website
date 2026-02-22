@@ -1,0 +1,36 @@
+name: Build and Deploy to LXC
+
+on:
+  push:
+    branches:
+      - main # Triggers on push to the main branch
+
+jobs:
+  build-and-deploy:
+    # This is the key: it tells the job to run on your self-hosted runner
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        # This action ensures the correct Node.js version is used by the runner
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm' # Cache npm dependencies for faster builds
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Application
+        # This creates the static files in the 'dist' directory
+        run: npm run build
+
+      - name: Deploy to Nginx
+        run: |
+          # This command removes the old website files
+          # and copies the new build files into the Nginx web root.
+          sudo rm -rf /var/www/portfolio/*
+          sudo cp -r dist/* /var/www/portfolio/
