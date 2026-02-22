@@ -6,9 +6,11 @@ interface CardProps {
   href?: string;
   className?: string;
   children: React.ReactNode;
+  icon?: React.ReactNode;
+  onClick?: () => void;
 }
 
-const Card: React.FC<CardProps> = ({ title, href, className = "", children }) => {
+const Card: React.FC<CardProps> = ({ title, href, className = "", children, icon, onClick }) => {
   const Container = href ? 'a' : 'div';
 
   return (
@@ -16,10 +18,11 @@ const Card: React.FC<CardProps> = ({ title, href, className = "", children }) =>
       href={href}
       target={href ? '_blank' : undefined}
       rel={href ? 'noopener noreferrer' : undefined}
+      onClick={onClick}
       className={`
         group relative overflow-hidden bg-white/50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-100 dark:border-white/5 shadow-sm flex flex-col justify-between 
         transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
-        ${href ? 'hover:-translate-y-1.5 hover:shadow-2xl hover:border-sapphire/20 dark:hover:border-sapphire/30 cursor-pointer' : ''}
+        ${href || onClick ? 'hover:-translate-y-1.5 hover:shadow-2xl hover:border-sapphire/20 dark:hover:border-sapphire/30 cursor-pointer' : ''}
         ${className}
       `}
     >
@@ -27,9 +30,12 @@ const Card: React.FC<CardProps> = ({ title, href, className = "", children }) =>
       
       <div className="relative z-10 w-full">
         {title && (
-          <h3 className="text-sm font-black text-slate-900 dark:text-white mb-4 tracking-widest uppercase group-hover:text-sapphire transition-colors">
-            {title}
-          </h3>
+          <div className="flex items-center gap-4">
+            {icon && <div className="text-sapphire">{icon}</div>}
+            <h3 className="text-sm font-black text-slate-900 dark:text-white mb-4 tracking-widest uppercase group-hover:text-sapphire transition-colors">
+              {title}
+            </h3>
+          </div>
         )}
         <div className="text-[13px] text-slate-500 dark:text-slate-400 leading-relaxed font-medium transition-colors">
           {children}

@@ -1,11 +1,17 @@
 
 import React, { useState } from 'react';
 import Card from '../components/Card';
+import Skills from '../components/Skills';
+import ProjectModal from '../components/ProjectModal';
+import Focus from '../components/Focus';
 import { useLanguage } from '../App';
+
+import { projects, LocalizedProject } from '../data/projects';
 
 const Home: React.FC = () => {
   const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<LocalizedProject | null>(null);
   const email = "vansh.moodhoo@gmail.com";
 
   const copyToClipboard = () => {
@@ -27,16 +33,19 @@ const Home: React.FC = () => {
           />
           <div className="absolute -bottom-5 -right-5 bg-white dark:bg-slate-900 border border-slate-100 dark:border-white/10 px-6 py-3 rounded-2xl shadow-2xl text-[10px] font-black tracking-widest flex flex-col gap-1 dark:text-white uppercase">
             <span className="text-sapphire">{t.hero.status}</span>
-            <span className="text-slate-900 dark:text-slate-100 opacity-70">HTW Saar • Engineering</span>
+            <span className="text-slate-900 dark:text-slate-100 opacity-70">{t.hero.location}</span>
           </div>
         </div>
         
         <div className="space-y-8 flex-1">
           <div className="space-y-4">
-            <h1 className="text-6xl md:text-8xl font-black text-slate-900 dark:text-white tracking-tighter leading-[0.85] transition-colors">
-              {t.hero.title} <br/> <span className="text-sapphire">{t.hero.accent}</span>
+            <h1 className="text-5xl md:text-7xl font-black text-slate-900 dark:text-white tracking-tighter leading-tight transition-colors">
+              {t.hero.title}
             </h1>
-            <p className="text-lg text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed font-medium transition-colors">
+            <p className="text-lg text-sapphire font-bold tracking-tight">
+              {t.hero.accent}
+            </p>
+            <p className="text-lg text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed font-medium transition-colors pt-4">
               {t.hero.bio}
             </p>
           </div>
@@ -51,7 +60,51 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Bento Grid */}
+      {/* Projects Section */}
+      <section className="space-y-16">
+        <div className="text-center space-y-4">
+          <h2 className="text-base font-black text-sapphire tracking-[0.5em] uppercase">{t.projects.label}</h2>
+          <p className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tighter leading-tight">
+            {t.projects.title}
+          </p>
+          <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
+            {t.projects.desc}
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project: LocalizedProject) => (
+            <Card 
+              key={project.title} 
+              onClick={() => setSelectedProject(project)}
+              className="flex flex-col justify-start !p-0"
+            >
+              {project.image && (
+                <div className="w-full h-40 overflow-hidden rounded-t-[2rem]">
+                  <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+              )}
+              <div className="p-8 flex-1 flex flex-col">
+                <div className="flex-1">
+                  <h3 className="text-lg font-black text-slate-900 dark:text-white group-hover:text-sapphire transition-colors">{project.title}</h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed line-clamp-3">{project.longDescription[t.language]}</p>
+                </div>
+                <div className="mt-6 flex items-center justify-between">
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map(tech => (
+                      <span key={tech} className="text-[10px] font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/50 px-3 py-1 rounded-full">{tech}</span>
+                    ))}
+                  </div>
+                  <button onClick={() => setSelectedProject(project)} className="text-[10px] font-black text-sapphire tracking-widest hover:underline whitespace-nowrap">
+                    {t.projects.inspect} &rarr;
+                  </button>
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Philosophy and Connect Section */}
       <section className="grid grid-cols-1 md:grid-cols-12 gap-6">
         <Card className="md:col-span-8 !p-10" title={t.philosophy.title}>
           <div className="space-y-6">
@@ -64,7 +117,6 @@ const Home: React.FC = () => {
           </div>
         </Card>
 
-        {/* Action Center */}
         <div id="connect" className="md:col-span-4 group flex flex-col">
           <div className="flex-1 bg-slate-900 dark:bg-slate-800 p-8 rounded-[2.5rem] flex flex-col justify-between shadow-2xl transition-transform hover:scale-[1.02] duration-500">
             <div>
@@ -94,56 +146,13 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* Technical & Personal Pillars */}
-        <div className="md:col-span-12 py-16 flex items-center gap-10">
-          <div className="h-px flex-1 bg-slate-100 dark:bg-white/5"></div>
-          <h2 className="text-[10px] font-black tracking-[0.5em] text-slate-400 uppercase">{t.pillars.title}</h2>
-          <div className="h-px flex-1 bg-slate-100 dark:bg-white/5"></div>
-        </div>
-
-        <Card className="md:col-span-4" title={t.pillars.opt.title}>
-          <p className="text-xs leading-relaxed">{t.pillars.opt.desc}</p>
-        </Card>
-        <Card className="md:col-span-4" title={t.pillars.disc.title}>
-          <p className="text-xs leading-relaxed">{t.pillars.disc.desc}</p>
-        </Card>
-        <Card className="md:col-span-4" title={t.pillars.loyal.title}>
-          <p className="text-xs leading-relaxed">{t.pillars.loyal.desc}</p>
-        </Card>
       </section>
 
-      {/* Philosophy Callout */}
-      <section className="flex flex-col md:flex-row justify-between gap-24 border-t border-slate-100 dark:border-white/5 pt-24 transition-colors">
-        <div className="max-w-md space-y-6">
-          <h2 className="text-4xl font-black text-slate-900 dark:text-white tracking-tighter leading-tight italic">
-            "{t.footer.quote}"
-          </h2>
-          <p className="text-slate-500 dark:text-slate-400 text-[13px] font-medium leading-relaxed">
-            {t.footer.desc}
-          </p>
-        </div>
-        <div className="flex-1 grid grid-cols-2 gap-16">
-            <div>
-                <h4 className="text-[10px] font-black text-slate-300 dark:text-slate-700 tracking-[0.4em] uppercase mb-8">Mechanical</h4>
-                <ul className="space-y-4 text-[11px] font-black text-slate-600 dark:text-slate-400 uppercase tracking-[0.15em]">
-                    <li>Thermodynamics</li>
-                    <li>Fluid Dynamics</li>
-                    <li>Material Science</li>
-                    <li>Statics & FEM</li>
-                </ul>
-            </div>
-            <div>
-                <h4 className="text-[10px] font-black text-slate-300 dark:text-slate-700 tracking-[0.4em] uppercase mb-8">Systems</h4>
-                <ul className="space-y-4 text-[11px] font-black text-slate-600 dark:text-slate-400 uppercase tracking-[0.15em]">
-                    <li>Linux / Bash</li>
-                    <li>CI/CD Workflows</li>
-                    <li>Python Automation</li>
-                    <li>AI Agent Logic</li>
-                </ul>
-            </div>
-        </div>
-      </section>
+      <Focus />
+
+      <Skills />
+
+      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
     </div>
   );
 };

@@ -54,15 +54,7 @@ const Navbar: React.FC = () => {
           >
             {t.nav.home}
           </Link>
-          <Link 
-            to="/projects" 
-            className={`px-4 py-2 text-[10px] font-black tracking-widest rounded-xl transition-all ${
-              !isHome ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-lg' : 'text-slate-400 hover:text-slate-900 dark:hover:text-white'
-            }`}
-          >
-            {t.nav.work}
-          </Link>
-          
+
           <div className="w-px h-4 bg-slate-200 dark:bg-white/10 mx-2"></div>
           
           <div className="flex gap-1 bg-slate-100/50 dark:bg-white/5 p-1 rounded-xl">

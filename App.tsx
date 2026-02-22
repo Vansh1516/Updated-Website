@@ -4,7 +4,6 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Background from './components/Background';
 import Home from './pages/Home';
-import Projects from './pages/Projects';
 import { Language, translations } from './translations';
 
 interface LanguageContextType {
@@ -44,7 +43,6 @@ const App: React.FC = () => {
           <main className="flex-1 w-full max-w-4xl mx-auto px-6 relative z-10">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/projects" element={<Projects />} />
             </Routes>
           </main>
 

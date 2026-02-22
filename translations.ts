@@ -3,19 +3,19 @@ export type Language = 'en' | 'de' | 'fr';
 
 export const translations = {
   en: {
-    nav: { home: 'INDEX', work: 'SYSTEMS' },
+    nav: { home: 'Home', work: 'Projects' },
     hero: {
-      title: 'Architect of my',
-      accent: 'own trajectory.',
-      status: 'Current Engagement',
-      location: 'SAARLAND, DE • B.ENG',
-      bio: 'Originally from Mauritius and now studying Mechanical Engineering at HTW Saar in Germany, I focus on the intersection of physical hardware and digital logic. I value technical precision and the discipline required to build reliable, high-performance systems.',
+      title: 'Mechanical Engineering Student',
+      accent: 'Building systems, discipline, and long-term leverage.',
+      status: 'Location',
+      location: 'Saarland, Germany',
+      bio: 'Originally from Mauritius, I moved to Germany to immerse myself in a world-class engineering environment. I am currently developing my skills in mechanical systems and automation at HTW Saar.',
       connect: 'Get in touch',
     },
     philosophy: {
-      title: 'Engineering Philosophy',
-      p1: 'I see engineering as a discipline of precision and resilience. It’s about building systems that perform reliably under any conditions. My experience moving to Germany has reinforced the importance of adaptability and technical integrity.',
-      p2: 'I value efficiency and structured thinking, aiming to contribute to the field through continuous learning and honest craftsmanship.',
+      title: 'How I Think',
+      p1: 'I operate with a “self-builder” mindset. To me, engineering is a discipline of precision and resilience, but its principles apply to more than just machines. It’s about creating systems—personal and technical—that perform reliably under any conditions.',
+      p2: 'This is my personal site. It’s a curated interface between my inner world and the external world. If you resonate, explore. If you need proof of my work, it’s here. If not, that’s okay.',
     },
     contact: {
       title: 'Connect',
@@ -38,28 +38,56 @@ export const translations = {
       linkedIn: 'LinkedIn Profile',
     },
     projects: {
-      label: 'Technical Logs & Work',
-      title: 'Selected',
-      accent: 'Workflows.',
-      desc: 'A record of projects documenting the transition from mechanical theory to applied systems. These are honest accounts of logic, failure, and iteration.',
-      caseStudy: 'Technical Log',
-      inspect: 'Review Documentation',
+      label: 'Proof of Work',
+      title: 'A System I Studied Deeply',
+      accent: '',
+      desc: 'Below are selected systems I have engaged with. They are not just projects, but explorations in logic, iteration, and applied discipline. The goal is not to scream technicality, but to quietly demonstrate competence.',
+      caseStudy: 'View Study',
+      inspect: 'View Study',
+    },
+    skills: {
+      title: 'Technical Skills',
+      languages: 'Languages',
+      langDesc: 'English (Fluent), French (Fluent), German (Intermediate - B2 progressing to C1)',
+      software: 'Software',
+      softDesc: 'Microsoft Office Suite (Word, Excel, PowerPoint, Database, Emailing)',
+      cert: 'Certifications',
+      certDesc: 'Diving Certificates, Skipper License Category C, International Driving License',
+    },
+    focus: {
+      title: 'Current Focus',
+      material: {
+        title: 'Material Science',
+        desc: 'Studying how materials respond to stress, heat, and load. Focusing on structure, strength, and failure in real systems.',
+      },
+      cad: {
+        title: 'Mechanical Design & CAD',
+        desc: 'Learning the basics of CAD with a focus on building clean, logical models rather than just complex shapes.',
+      },
+      scripting: {
+        title: 'Python & MATLAB',
+        desc: 'Using code to explore and make sense of simple engineering problems and analyses.',
+      },
+      german: {
+        title: 'Technical German',
+        desc: 'Actively working on my technical vocabulary to work effectively in German environments.',
+      },
     }
   },
   de: {
-    nav: { home: 'INDEX', work: 'SYSTEME' },
+    nav: { home: 'Startseite', work: 'Projekte' },
     hero: {
-      title: 'Architekt meiner',
-      accent: 'eigenen Laufbahn.',
-      status: 'Aktuelles Engagement',
-      location: 'SAARLAND, DE • B.ENG',
-      bio: 'Ursprünglich aus Mauritius und heute Maschinenbaustudent an der HTW Saar in Deutschland, konzentriere ich mich auf die Schnittstelle zwischen Hardware und digitaler Logik. Ich schätze technische Präzision und die Disziplin, die für den Aufbau zuverlässiger Systeme erforderlich ist.',
+      title: 'Student des Maschinenbaus',
+      accent: 'Systeme, Disziplin und langfristige Hebelwirkung.',
+      status: 'Standort',
+      location: 'Saarland, Deutschland',
+      bio: 'Ursprünglich aus Mauritius, zog ich nach Deutschland, um in eine erstklassige Ingenieurumgebung einzutauchen. Derzeit entwickle ich meine Fähigkeiten in mechanischen Systemen und Automatisierung an der HTW Saar.',
       connect: 'Kontakt aufnehmen',
     },
     philosophy: {
-      title: 'Ingenieurphilosophie',
-      p1: 'Ingenieurwesen ist für mich eine Disziplin der Präzision und Belastbarkeit. Es geht darum, Systeme zu schaffen, die unter allen Bedingungen zuverlässig funktionieren. Meine Erfahrung beim Umzug nach Deutschland hat die Bedeutung von Anpassungsfähigkeit und technischer Integrität unterstrichen.',
-      p2: 'Ich schätze Effizienz und strukturiertes Denken und strebe danach, durch ständiges Lernen und ehrliches Handwerk einen Beitrag zum Fachgebiet zu leisten.',
+      title: 'Meine Denkweise',
+      p1: 'Ich arbeite mit einer „Self-Builder“-Mentalität. Für mich ist Ingenieurwesen eine Disziplin der Präzision und Belastbarkeit, aber die Prinzipien gelten für mehr als nur Maschinen. Es geht darum, Systeme zu schaffen – persönliche und technische –, die unter allen Bedingungen zuverlässig funktionieren.',
+      p2: 'Dies ist meine persönliche Seite. Es ist eine kuratierte Schnittstelle zwischen meiner inneren und der äußeren Welt. Wenn Sie sich angesprochen fühlen, erkunden Sie sie. Wenn Sie einen Nachweis meiner Arbeit benötigen, finden Sie ihn hier. Wenn nicht, ist das auch in Ordnung.',
     },
     contact: {
       title: 'Kontakt',
@@ -82,28 +110,56 @@ export const translations = {
       linkedIn: 'LinkedIn Profil',
     },
     projects: {
-      label: 'Technische Berichte',
-      title: 'Ausgewählte',
-      accent: 'Systeme.',
-      desc: 'Eine Dokumentation von Projekten, die den Übergang von mechanischer Theorie zu angewandten Systemen beschreiben. Ehrliche Berichte über Logik und Iteration.',
-      caseStudy: 'Technisches Logbuch',
-      inspect: 'Dokumentation prüfen',
+      label: 'Arbeitsnachweis',
+      title: 'Ein System, das ich intensiv studiert habe',
+      accent: '',
+      desc: 'Unten finden Sie ausgewählte Systeme, mit denen ich mich beschäftigt habe. Sie sind nicht nur Projekte, sondern Erkundungen in Logik, Iteration und angewandter Disziplin. Das Ziel ist nicht, technische Details lautstark zu präsentieren, sondern Kompetenz leise zu demonstrieren.',
+      caseStudy: 'Studie ansehen',
+      inspect: 'Studie ansehen',
+    },
+    skills: {
+      title: 'Technische Fähigkeiten',
+      languages: 'Sprachen',
+      langDesc: 'Englisch (fließend), Französisch (fließend), Deutsch (Mittelstufe - B2 mit Ziel C1)',
+      software: 'Software',
+      softDesc: 'Microsoft Office Suite (Word, Excel, PowerPoint, Datenbank, E-Mail)',
+      cert: 'Zertifizierungen',
+      certDesc: 'Tauchscheine, Skipper-Lizenz Kategorie C, Internationaler Führerschein',
+    },
+    focus: {
+      title: 'Aktueller Fokus',
+      material: {
+        title: 'Materialwissenschaft',
+        desc: 'Untersuchung, wie Materialien auf Stress, Hitze und Belastung reagieren. Fokus auf Struktur, Festigkeit und Versagen in realen Systemen.',
+      },
+      cad: {
+        title: 'Mechanische Konstruktion & CAD',
+        desc: 'Erlernen der CAD-Grundlagen mit dem Fokus auf saubere, logische Modelle anstatt nur komplexer Formen.',
+      },
+      scripting: {
+        title: 'Python & MATLAB',
+        desc: 'Verwendung von Code zur Untersuchung und zum Verständnis einfacher technischer Probleme und Analysen.',
+      },
+      german: {
+        title: 'Technisches Deutsch',
+        desc: 'Aktive Arbeit an meinem technischen Wortschatz, um in deutschen Arbeitsumgebungen effektiv zu arbeiten.',
+      },
     }
   },
   fr: {
-    nav: { home: 'INDEX', work: 'SYSTÈMES' },
+    nav: { home: 'Accueil', work: 'Projets' },
     hero: {
-      title: 'Architecte de ma',
-      accent: 'propre trajectoire.',
-      status: 'Engagement Actuel',
-      location: 'SARRE, DE • B.ENG',
-      bio: 'Originaire de l\'île Maurice et aujourd\'hui étudiant en génie mécanique à la HTW Saar en Allemagne, je me concentre sur l\'intersection du matériel physique et de la logique numérique. J\'accorde une grande importance à la précision technique et à la discipline nécessaire pour construire des systèmes fiables.',
+      title: 'Étudiant en génie mécanique',
+      accent: 'Construire des systèmes, de la discipline et un levier à long terme.',
+      status: 'Lieu',
+      location: 'Sarre, Allemagne',
+      bio: 'Originaire de l\'île Maurice, j\'ai déménagé en Allemagne pour m\'immerger dans un environnement d\'ingénierie de classe mondiale. Je développe actuellement mes compétences en systèmes mécaniques et en automatisation à la HTW Saar.',
       connect: 'Me contacter',
     },
     philosophy: {
-      title: 'Philosophie d\'Ingénierie',
-      p1: 'Je considère l\'ingénierie comme une discipline de précision et de résilience. Il s\'agit de créer des systèmes qui fonctionnent de manière fiable en toutes circonstances. Mon parcours vers l\'Allemagne a renforcé l\'importance de l\'adaptabilité et de l\'intégrité technique.',
-      p2: 'Je valorise l\'efficacité et la pensée structurée, avec pour objectif de contribuer à mon domaine par un apprentissage continu et un savoir-faire honnête.',
+      title: 'Ma façon de penser',
+      p1: 'Je fonctionne avec un état d\'esprit d\'« auto-constructeur ». Pour moi, l\'ingénierie est une discipline de précision et de résilience, mais ses principes s\'appliquent à plus que des machines. Il s\'agit de créer des systèmes, personnels et techniques, qui fonctionnent de manière fiable dans toutes les conditions.',
+      p2: 'Ceci est mon site personnel. C\'est une interface organisée entre mon monde intérieur et le monde extérieur. Si vous vous sentez en phase, explorez. Si vous avez besoin de preuves de mon travail, elles sont ici. Sinon, ce n\'est pas grave.',
     },
     contact: {
       title: 'Contact',
@@ -126,12 +182,40 @@ export const translations = {
       linkedIn: 'Profil LinkedIn',
     },
     projects: {
-      label: 'Archives Techniques',
-      title: 'Archives',
-      accent: 'Sélectionnées.',
-      desc: 'Une collection documentant ma transition de la théorie mécanique aux systèmes appliqués. Des comptes rendus honnêtes de logique et d\'itération.',
-      caseStudy: 'Log Technique',
-      inspect: 'Consulter l\'archive',
+      label: 'Preuve de travail',
+      title: 'Un système que j\'ai étudié en profondeur',
+      accent: '',
+      desc: 'Vous trouverez ci-dessous une sélection de systèmes avec lesquels j\'ai travaillé. Ce ne sont pas seulement des projets, mais des explorations de la logique, de l\'itération et de la discipline appliquée. L\'objectif n\'est pas de crier à la technicité, mais de démontrer tranquillement sa compétence.',
+      caseStudy: 'Voir l\'étude',
+      inspect: 'Voir l\'étude',
+    },
+    skills: {
+      title: 'Compétences Techniques',
+      languages: 'Langues',
+      langDesc: 'Anglais (courant), Français (courant), Allemand (Intermédiaire - B2 en progression vers C1)',
+      software: 'Logiciels',
+      softDesc: 'Microsoft Office Suite (Word, Excel, PowerPoint, Base de données, E-mail)',
+      cert: 'Certifications',
+      certDesc: 'Certificats de plongée, Permis de skipper catégorie C, Permis de conduire international',
+    },
+    focus: {
+      title: 'Focalisation Actuelle',
+      material: {
+        title: 'Science des Matériaux',
+        desc: 'Étude de la réponse des matériaux au stress, à la chaleur et à la charge. Concentration sur la structure, la résistance et la défaillance dans les systèmes réels.',
+      },
+      cad: {
+        title: 'Conception Mécanique & CAO',
+        desc: 'Apprentissage des bases de la CAO avec un accent sur la construction de modèles propres et logiques plutôt que de simples formes complexes.',
+      },
+      scripting: {
+        title: 'Python & MATLAB',
+        desc: 'Utilisation du code pour explorer et comprendre des problèmes et des analyses d\'ingénierie simples.',
+      },
+      german: {
+        title: 'Allemand Technique',
+        desc: 'Travail actif sur mon vocabulaire technique pour travailler efficacement dans des environnements allemands.',
+      },
     }
   }
 };
